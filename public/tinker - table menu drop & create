@@ -1,0 +1,13 @@
+// Another tinker script...
+// This will drop your old menu table
+        Schema::drop('menu');        
+
+// This will create your menu table from scratch
+Schema::create('menu', function ($table) {
+            $table->increments('id');
+            $table->string('type');
+            $table->string('title');
+            $table->string('img');
+            $table->integer('cat_id');
+            $table->integer('subcat_id');
+        });
