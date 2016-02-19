@@ -1,8 +1,22 @@
+
+// This will drop your old menu table
+        Schema::drop('menu');        
+
+// This will create your menu table from scratch
+Schema::create('menu', function ($table) {
+            $table->increments('id');
+            $table->string('type');
+            $table->string('title');
+            $table->string('img');
+            $table->integer('cat_id');
+            $table->integer('subcat_id');
+        });
+
 // Batch insert on menu
 DB::table('menu')->insert(array(
 	array('type' => 'cat', 'title' => '2 For 20', 'img'=>'2420.jpg', 'cat_id'=>'', 'subcat_id'=>''),
 	array('type' => 'cat', 'title' => 'Better for You', 'img'=>'better4u.jpg', 'cat_id'=>'', 'subcat_id'=>''),
-	array('type' => 'cat', 'title' => 'Beverages', 'img'=>'refreshments.jpg', 'cat_id'=>'', 'subcat_id'=>''),
+	array('type' => 'cat', 'title' => 'Beverages', 'img'=>'beverages.jpg', 'cat_id'=>'', 'subcat_id'=>''),
 	array('type' => 'cat', 'title' => 'Handcrafted Burgers', 'img'=>'handcraftedHamburger.jpg', 'cat_id'=>'', 'subcat_id'=>''),
 	array('type' => 'cat', 'title' => 'Desserts', 'img'=>'desserts.jpg', 'cat_id'=>'', 'subcat_id'=>''),
 	array('type' => 'cat', 'title' => 'Main Entrees', 'img'=>'entrees.jpg', 'cat_id'=>'', 'subcat_id'=>''),

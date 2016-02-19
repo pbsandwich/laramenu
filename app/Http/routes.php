@@ -12,8 +12,9 @@
 */
 
 Route::get('/', 'DatabaseController@home');
-Route::get('subcat', 'DatabaseController@subcat');
-Route::get('item', 'DatabaseController@item');
+Route::get('subcat/{id}', 'DatabaseController@subcat');
+Route::get('item/{id}', 'DatabaseController@item');
+Route::get('subitem/{id}', 'DatabaseController@subitem');
 
 /*
 |--------------------------------------------------------------------------
