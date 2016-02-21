@@ -17,22 +17,23 @@ class DatabaseController extends Controller
 
     function subcat ($id) {
         $contents=DB::table('menu')->where([ ['cat_id', $id], ['type', 'subcat'] ])->get();
-        //$contents=DB::table('menu')->where([ ['cat_id', $id], ['type', 'item'] ])->get();
-        //$contents=DB::table('menu')->get();
         return view('subcat', compact('contents'));
     }
 
     function item ($id) {
-        //$contents=DB::table('menu')->where('subcat_id', $id)->get();
         $contents=DB::table('menu')->where([ ['cat_id', $id], ['type', 'item'] ])->get();
-        //$contents=DB::table('menu')->get();
         return view('item', compact('contents'));
     }
 
     function subitem ($id) {
         $contents=DB::table('menu')->where('subcat_id', $id)->get();
-        //$contents=DB::table('menu')->where([ ['cat_id', $id], ['type', 'item'] ])->get();
-        //$contents=DB::table('menu')->get();
         return view('item', compact('contents'));
     }
 }
+
+//$contents=DB::table('menu')->where([ ['cat_id', $id], ['type', 'item'] ])->get();
+//$contents=DB::table('menu')->get();
+//$contents=DB::table('menu')->where('subcat_id', $id)->get();
+//$contents=DB::table('menu')->get();
+//$contents=DB::table('menu')->where([ ['cat_id', $id], ['type', 'item'] ])->get();
+//$contents=DB::table('menu')->get();
