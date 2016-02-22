@@ -10,6 +10,7 @@
     <h1>Applebee's Menu</h1>
     @foreach($contents as $content)
         <div>
+            {{-- The item blade view displays just the items. --}}
             <div class='col-sm-4'>
                 <p><img class="img-responsive" src="/img/{{ $content->img }}" title="{{ $content->img }}"/></p>
                 <h4>{{ $content->title }}</h4>

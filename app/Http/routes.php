@@ -11,6 +11,15 @@
 |
 */
 
+/*
+ | I used four routes to complete this project.
+ | --------------------------------------------
+ |      '/' - 'home' displays the main categories (welcome view)
+ |      'subcat/{id} = @subcat displays the subcategories (subcat view)
+ |      'item/{id} = @item displays the items
+ |      'subitem/{id} = @subitem displays the items from the subcat view
+ */
+
 Route::get('/', 'DatabaseController@home');
 Route::get('subcat/{id}', 'DatabaseController@subcat');
 Route::get('item/{id}', 'DatabaseController@item');
