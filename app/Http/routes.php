@@ -24,6 +24,7 @@ Route::get('/', 'DatabaseController@home');
 Route::get('subcat/{id}', 'DatabaseController@subcat');
 Route::get('item/{id}', 'DatabaseController@item');
 Route::get('subitem/{id}', 'DatabaseController@subitem');
+Route::get('delete/{id}', 'DatabaseController@delete');
 
 /*
 |--------------------------------------------------------------------------
