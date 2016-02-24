@@ -23,10 +23,10 @@
                 <p><img class="img-responsive" src="/img/{{ $content->img }}" title="{{ $content->img }}"/></p>
                 @if ($content->id == 1 or $content->id == 3 or $content->id == 6)
                     <h4><a href="/subcat/{{ $content->id }}">{{ $content->title }}</a></h4>
-                    <a href="{{ action('DatabaseController@delete', ['cat_id' => $content->id]) }}">Delete</a>
+                    <a href="{{ action('DatabaseController@destroy', ['cat_id' => $content->id]) }}">Delete</a>
                 @else
                     <h4><a href="/item/{{ $content->id }}">{{ $content->title }}</a></h4>
-                    <a href="{{ action('DatabaseController@delete', ['cat_id' => $content->id]) }}">Delete</a>
+                    <a href="{{ action('DatabaseController@destroy', ['cat_id' => $content->id]) }}">Delete</a>
                 @endif
             </div>
         </div>

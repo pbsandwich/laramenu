@@ -17,19 +17,25 @@
 
             <div class='col-sm-4'>
                 <p><img class="img-responsive" src="/img/{{ $content->img }}"  title="{{ $content->img }}"/></p>
-                @if ($content->id == 1 or $content->id == 3 or $content->id == 6)
+                {{--@if ($content->id == 1 or $content->id == 3 or $content->id == 6)--}}
+                    <h4>Destroy</h4>
                     <h4><a href="{{ action('DatabaseController@item', ['cat_id' => $content->id]) }}">{{ $content->title }}</a></h4>
-                    <a href="{{ action('DatabaseController@delete', ['cat_id' => $content->id]) }}">Delete</a>
-                @else
-                    <h4><a href="{{ action('DatabaseController@subitem', ['cat_id' => $content->id]) }}">{{ $content->title }}</a></h4>
-                    <a href="{{ action('DatabaseController@delete', ['cat_id' => $content->id]) }}">Delete</a>
-                @endif
+                    <a href="{{ action('DatabaseController@destroy', ['cat_id' => $content->id]) }}">Destroy</a>
+                    <p>'cat_id: ' {{ $content->cat_id }}</p>
+                    <p>'id: ' {{ $content->id }}</p>
+                {{--@else--}}
+                    {{--<h4><a href="{{ action('DatabaseController@item', ['cat_id' => $content->id]) }}">{{ $content->title }}</a></h4>--}}
+                    {{--<a href="{{ action('DatabaseController@delete', ['id' => $content->id]) }}">Delete</a>--}}
+                    {{--<p>'cat_id: ' {{ $content->cat_id }}</p>--}}
+                    {{--<p>'id: ' {{ $content->id }}</p>--}}
+                {{--@endif--}}
             </div>
         </div>
     @endforeach
 
 @endsection
 {{-- Code I used to examine database fields. :-) --}}
+{{--<a href="{{ action('DatabaseController@delete', ['cat_id' => $content->cat_id]) }}">Delete</a>--}}
 {{--<p>{{ $content->type }}</p>--}}
 {{--<p>'cat_id: ' {{ $content->cat_id }}</p>--}}
 {{--<p>'subcat_id: ' {{ $content->subcat_id }}</p>--}}

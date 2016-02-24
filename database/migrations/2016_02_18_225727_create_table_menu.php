@@ -99,6 +99,6 @@ class CreateTableMenu extends Migration
      */
     public function down()
     {
-        Schema::drop('menu');
+//        Schema::drop('menu');
     }
 }
