@@ -13,8 +13,8 @@
             {{-- The item blade view displays just the items. --}}
             <div class='col-sm-4'>
                 <p><img class="img-responsive" src="/img/{{ $content->img }}" title="{{ $content->img }}"/></p>
-                    <h4>{{ $content->title }}</h4>
-                    <a href="{{ action('DatabaseController@delete', ['cat_id' => $content->id]) }}">Delete</a>
+                <h4>{{ $content->title }}</h4>
+                <a href="{{ action('DatabaseController@delete', ['cat_id' => $content->id]) }}">Delete</a>
             </div>
         </div>
     @endforeach

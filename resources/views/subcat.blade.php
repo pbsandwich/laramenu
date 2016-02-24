@@ -17,18 +17,8 @@
 
             <div class='col-sm-4'>
                 <p><img class="img-responsive" src="/img/{{ $content->img }}"  title="{{ $content->img }}"/></p>
-                {{--@if ($content->id == 1 or $content->id == 3 or $content->id == 6)--}}
-                    <h4>Destroy</h4>
-                    <h4><a href="{{ action('DatabaseController@item', ['cat_id' => $content->id]) }}">{{ $content->title }}</a></h4>
-                    <a href="{{ action('DatabaseController@destroy', ['cat_id' => $content->id]) }}">Destroy</a>
-                    <p>'cat_id: ' {{ $content->cat_id }}</p>
-                    <p>'id: ' {{ $content->id }}</p>
-                {{--@else--}}
-                    {{--<h4><a href="{{ action('DatabaseController@item', ['cat_id' => $content->id]) }}">{{ $content->title }}</a></h4>--}}
-                    {{--<a href="{{ action('DatabaseController@delete', ['id' => $content->id]) }}">Delete</a>--}}
-                    {{--<p>'cat_id: ' {{ $content->cat_id }}</p>--}}
-                    {{--<p>'id: ' {{ $content->id }}</p>--}}
-                {{--@endif--}}
+                <h4><a href="{{ action('DatabaseController@item', ['cat_id' => $content->id]) }}">{{ $content->title }}</a></h4>
+                <a href="{{ action('DatabaseController@destroy', ['cat_id' => $content->id]) }}">Destroy</a>
             </div>
         </div>
     @endforeach
