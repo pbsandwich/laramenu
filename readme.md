@@ -1,3 +1,38 @@
+# Laramenu
+
+The *purpose* of this project was to recreate a two-page menu (based on Applebee's website menu).
+As a group we learned how to create a single table that contained categories, subcategories, and items.
+We displayed the categories on the first page, the subcategories on the second page, and items 
+on the second page.
+
+In our first version of the table, we included the subcat_id. This turned out to be a cool idea
+when we later added a delete button. You could delete main category items with just a query. Later, we
+redesigned the table without the subcat_id. This took away the ability to delete main category items
+with just a query. But the cool thing was we could do the same thing in code. 
+
+We then changed the one table into two tables. Most everything worked the same.
+
+## Other notes:
+
+I used four methods to display the data: home, subcat, item, and subitem.
+The home method displays the main categories (links) on the welcome blade view.
+The subcat method displays the subcategories (links) on the subcat blade view.
+The item method displays the items from the item blade view.
+The subitem method displays the items from the item blade view (using the subcat_id).
+02/23/16. Changed the table structure from one table called menu to two tables
+          called items and catsubcat. Wrote code to handle delete for missing subcat_id.
+
+2/22/16. Added this new Delete function (thanks to Coby and Jordan).
+To cascade delete from the welcome blade view, all three lines will delete records.
+To cascade delete from the subcat blade view, only the last two lines will delete records.
+To delete items from the item blade view, only the last line will delete records.
+2/23/16. Changed delete to work with the two-table structure: items and catsubcat. Since we
+         deleted subcat_id, needed to add code to handle delete from main blade view page.
+
+     
+
+
+
 # Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
